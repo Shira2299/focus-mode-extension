@@ -1,0 +1,15 @@
+{
+  "name": "focus-mode-extension",
+  "version": "1.0.0",
+  "description": "תוסף דפדפן למצב ריכוז שחוסם הסחות דעת",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "build:chrome": "node build.js chrome",
+    "build:firefox": "node build.js firefox",
+    "test:e2e": "node tests/e2e-check.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}

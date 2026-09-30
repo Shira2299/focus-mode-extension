@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>מצב ריכוז — תוסף חסימת הסחות דעת</title>
+<style>
+  :root {
+    --indigo: #4f46e5;
+    --indigo-dark: #4338ca;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(160deg, #eef2ff, var(--bg));
+    color: var(--text);
+    min-height: 100vh;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+  header { text-align: center; margin-bottom: 36px; }
+  header .emoji { font-size: 46px; }
+  h1 { font-size: 26px; margin: 10px 0 8px; }
+  header p { color: var(--muted); font-size: 15px; max-width: 480px; margin: 0 auto; line-height: 1.6; }
+
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+  @media (max-width: 560px) { .cards { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 22px; text-align: center; box-shadow: 0 10px 30px rgba(79,70,229,0.08);
+  }
+  .card h2 { font-size: 16px; margin: 4px 0 4px; }
+  .card p { font-size: 12px; color: var(--muted); margin: 0 0 16px; }
+  .btn {
+    display: inline-block; text-decoration: none; background: var(--indigo); color: #fff;
+    padding: 10px 18px; border-radius: 10px; font-weight: 600; font-size: 14px;
+  }
+  .btn:hover { background: var(--indigo-dark); }
+
+  .steps {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 24px 22px; margin-bottom: 28px;
+  }
+  .steps h2 { font-size: 16px; margin: 0 0 14px; }
+  .steps ol { margin: 0; padding-inline-start: 22px; font-size: 14px; line-height: 1.9; color: var(--text); }
+  .steps ol + h2 { margin-top: 20px; }
+
+  footer { text-align: center; font-size: 12px; color: var(--muted); }
+  footer a { color: var(--indigo); }
+
+  code {
+    background: #f1f5f9; padding: 1px 6px; border-radius: 6px; font-size: 12px;
+    direction: ltr; display: inline-block;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="emoji">🎯</div>
+      <h1>מצב ריכוז</h1>
+      <p>תוסף דפדפן: בוחרים כרטיסייה אחת שנשארת פתוחה, קובעים טיימר ותוכנית, והתוסף חוסם כל הסחת דעת אחרת עד שמסיימים — כולל הפסקות, הארכת זמן וחגיגת קונפטי בסוף.</p>
+    </header>
+
+    <div class="cards">
+      <div class="card">
+        <h2>🌐 Chrome / Edge / Brave</h2>
+        <p>מבוססי Chromium — אותו קובץ לכולם</p>
+        <a class="btn" id="dl-chrome" href="#">⬇️ הורדה</a>
+      </div>
+      <div class="card">
+        <h2>🦊 Firefox</h2>
+        <p>טעינה זמנית (עד סגירת הדפדפן)</p>
+        <a class="btn" id="dl-firefox" href="#">⬇️ הורדה</a>
+      </div>
+    </div>
+
+    <div class="steps">
+      <h2>🌐 התקנה ב-Chrome / Edge / Brave</h2>
+      <ol>
+        <li>מורידים את קובץ ה-ZIP למעלה ומחלצים אותו לתיקייה.</li>
+        <li>פותחים <code>chrome://extensions</code> (או <code>edge://extensions</code> / <code>brave://extensions</code>).</li>
+        <li>מפעילים "מצב מפתח" (Developer mode) בפינה.</li>
+        <li>לוחצים "טעינת תוסף לא ארוז" (Load unpacked) ובוחרים את התיקייה שחילצתם.</li>
+      </ol>
+
+      <h2>🦊 התקנה ב-Firefox</h2>
+      <ol>
+        <li>מורידים את קובץ ה-ZIP ומחלצים אותו לתיקייה.</li>
+        <li>פותחים <code>about:debugging#/runtime/this-firefox</code>.</li>
+        <li>לוחצים "טעינת תוסף זמנית" (Load Temporary Add-on) ובוחרים את הקובץ <code>manifest.json</code> בתוך התיקייה.</li>
+        <li>שימו לב: תוסף זמני נעלם כשסוגרים את פיירפוקס — צריך לטעון אותו מחדש בכל פתיחה.</li>
+      </ol>
+    </div>
+
+    <footer>
+      קוד המקור פתוח ב-<a id="repo-link" href="#">GitHub</a>. גרסה חדשה עולה אוטומטית עם כל עדכון.
+    </footer>
+  </div>
+
+  <script>
+    // עדכנו כאן את שם המשתמש/ריפו שלכם ב-GitHub — זה המקום היחיד שצריך לערוך.
+    const REPO = "Shira2299/focus-mode-extension";
+
+    document.getElementById("dl-chrome").href =
+      `https://github.com/${REPO}/releases/latest/download/focus-mode-chrome.zip`;
+    document.getElementById("dl-firefox").href =
+      `https://github.com/${REPO}/releases/latest/download/focus-mode-firefox.zip`;
+    document.getElementById("repo-link").href = `https://github.com/${REPO}`;
+  </script>
+</body>
+</html>

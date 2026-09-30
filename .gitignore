@@ -1,0 +1,4 @@
+dist/
+node_modules/
+tests/.pw-user-data/
+tests/screenshots/
