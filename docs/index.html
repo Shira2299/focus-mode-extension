@@ -50,6 +50,10 @@
   .steps h2 { font-size: 16px; margin: 0 0 14px; }
   .steps ol { margin: 0; padding-inline-start: 22px; font-size: 14px; line-height: 1.9; color: var(--text); }
   .steps ol + h2 { margin-top: 20px; }
+  .note {
+    background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 10px;
+    padding: 10px 14px; font-size: 13px; color: var(--indigo-dark); margin: 0 0 18px;
+  }
 
   footer { text-align: center; font-size: 12px; color: var(--muted); }
   footer a { color: var(--indigo); }
@@ -82,20 +86,24 @@
     </div>
 
     <div class="steps">
+      <p class="note">💡 שימו לב: תוסף כזה לא "מריצים" ולא מתקינים עם הפעלה כפולה על קובץ — פשוט בוחרים את התיקייה בתוך הדפדפן עצמו, כמו בהוראות למטה.</p>
+
       <h2>🌐 התקנה ב-Chrome / Edge / Brave</h2>
       <ol>
-        <li>מורידים את קובץ ה-ZIP למעלה ומחלצים אותו לתיקייה.</li>
-        <li>פותחים <code>chrome://extensions</code> (או <code>edge://extensions</code> / <code>brave://extensions</code>).</li>
-        <li>מפעילים "מצב מפתח" (Developer mode) בפינה.</li>
-        <li>לוחצים "טעינת תוסף לא ארוז" (Load unpacked) ובוחרים את התיקייה שחילצתם.</li>
+        <li>מורידים את קובץ ה-ZIP למעלה, ו<strong>מחלצים</strong> אותו לתיקייה (קליק ימני על קובץ ה-ZIP ← "חילוץ הכול" / Extract All).</li>
+        <li>פותחים את הדפדפן. <strong>מעתיקים</strong> את הכתובת <code>chrome://extensions</code> (למשתמשי Edge: <code>edge://extensions</code>, ל-Brave: <code>brave://extensions</code>) ו<strong>מדביקים</strong> אותה בשורת הכתובות למעלה (איפה שכותבים כתובות אתרים) — לא לחפש בגוגל! — ולוחצים Enter.</li>
+        <li>בעמוד שנפתח מחפשים מתג עם הכיתוב <strong>"Developer mode"</strong> (מצב מפתח) — המיקום המדויק משתנה קצת בין גרסאות דפדפן (לפעמים למעלה מימין, לפעמים בתפריט בצד שמאל) — ומפעילים אותו.</li>
+        <li>אחרי ההפעלה יופיעו כפתורים חדשים; לוחצים על <strong>"Load unpacked"</strong> (טעינת תוסף לא ארוז).</li>
+        <li>בוחרים את <strong>התיקייה שחילצתם</strong> בשלב 1 (לא את קובץ ה-ZIP המקורי!) ולוחצים "Select Folder" / "בחירת תיקייה". התוסף נטען מיד ומופיע ברשימה — זהו, אין שום דבר נוסף להריץ או להתקין.</li>
+        <li>כדי להשתמש בו: לוחצים על אייקון הפאזל 🧩 למעלה מימין בדפדפן, ואז על סיכת הנעיצה 📌 ליד "מצב ריכוז" כדי שהוא יופיע קבוע בסרגל הכלים.</li>
       </ol>
 
       <h2>🦊 התקנה ב-Firefox</h2>
       <ol>
-        <li>מורידים את קובץ ה-ZIP ומחלצים אותו לתיקייה.</li>
-        <li>פותחים <code>about:debugging#/runtime/this-firefox</code>.</li>
-        <li>לוחצים "טעינת תוסף זמנית" (Load Temporary Add-on) ובוחרים את הקובץ <code>manifest.json</code> בתוך התיקייה.</li>
-        <li>שימו לב: תוסף זמני נעלם כשסוגרים את פיירפוקס — צריך לטעון אותו מחדש בכל פתיחה.</li>
+        <li>מורידים את קובץ ה-ZIP ו<strong>מחלצים</strong> אותו לתיקייה.</li>
+        <li><strong>מעתיקים</strong> את הכתובת <code>about:debugging#/runtime/this-firefox</code> ו<strong>מדביקים</strong> אותה בשורת הכתובות למעלה, ולוחצים Enter.</li>
+        <li>לוחצים "טעינת תוסף זמנית" (Load Temporary Add-on) ובוחרים את הקובץ <code>manifest.json</code> שנמצא בתוך התיקייה שחילצתם.</li>
+        <li>שימו לב: תוסף זמני נעלם כשסוגרים את פיירפוקס — צריך לחזור על שלבים 2–3 בכל פתיחה מחדש של הדפדפן.</li>
       </ol>
     </div>
 

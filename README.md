@@ -20,13 +20,13 @@ npm run build:firefox    # רק firefox
 
 ### Chrome / Edge / Brave
 1. `npm run build:chrome`
-2. פתחו `chrome://extensions` (או `edge://extensions`, `brave://extensions`)
-3. הפעילו "מצב מפתח" (Developer mode)
-4. "טעינת תוסף לא ארוז" (Load unpacked) ובחרו את התיקייה `dist/chrome`
+2. הדביקו בשורת הכתובות של הדפדפן (לא בגוגל): `chrome://extensions` (או `edge://extensions`, `brave://extensions`) ולחצו Enter
+3. הפעילו את המתג "מצב מפתח" (Developer mode) — המיקום המדויק בעמוד משתנה בין גרסאות דפדפן
+4. לחצו "טעינת תוסף לא ארוז" (Load unpacked) ובחרו את התיקייה `dist/chrome` (לא קובץ בודד בתוכה — את התיקייה עצמה)
 
 ### Firefox
 1. `npm run build:firefox`
-2. פתחו `about:debugging#/runtime/this-firefox`
+2. הדביקו בשורת הכתובות: `about:debugging#/runtime/this-firefox` ולחצו Enter
 3. "טעינת תוסף זמנית" (Load Temporary Add-on) ובחרו את הקובץ `dist/firefox/manifest.json`
 
 > תוסף זמני ב-Firefox נמחק כשסוגרים את הדפדפן — לשימוש קבוע צריך לחתום את התוסף דרך addons.mozilla.org.
