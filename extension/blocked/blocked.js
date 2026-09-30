@@ -59,7 +59,7 @@ function renderActive(session) {
         <button class="danger" id="quitBtn">✖ ביטול</button>
       </div>
       <div id="breakForm" class="hidden">
-        <input type="number" id="breakMinutes" min="1" max="120" value="10" /> <span>דקות הפסקה</span>
+        <span>דקות הפסקה</span> <input type="number" id="breakMinutes" min="1" max="120" value="10" />
         <button class="primary" id="confirmBreakBtn">✔️ אישור</button>
       </div>
       <div id="quitConfirm" class="hidden">

@@ -70,8 +70,8 @@ async function renderIdle(log) {
 
     <label>כמה זמן להתמקד?</label>
     <div class="row">
-      <input type="number" id="hours" min="0" max="12" value="0" /> <span>שעות</span>
-      <input type="number" id="minutes" min="0" max="59" value="25" /> <span>דקות</span>
+      <span>שעות</span> <input type="number" id="hours" min="0" max="12" value="0" />
+      <span>דקות</span> <input type="number" id="minutes" min="0" max="59" value="25" />
     </div>
 
     <label>מה מתכננים לעשות בזמן הזה?</label>
@@ -121,7 +121,7 @@ function renderActive(session) {
 
     <button class="secondary full" id="breakBtn">☕ הפסקה</button>
     <div id="breakForm" class="hidden">
-      <input type="number" id="breakMinutes" min="1" max="120" value="10" /> <span>דקות הפסקה</span>
+      <span>דקות הפסקה</span> <input type="number" id="breakMinutes" min="1" max="120" value="10" />
       <button class="primary" id="confirmBreakBtn">✔️ אישור</button>
     </div>
 
